@@ -5,6 +5,8 @@ module.exports = {
   password: '',
   database: 'tasklist',
   define: {
-    timestamps: true
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true
   }
 };
