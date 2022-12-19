@@ -1,5 +1,7 @@
 import express from 'express';
 import routes from './routes';
+// Inicializando conexão com banco e os modelos
+import './database';
 
 class App {
 

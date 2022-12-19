@@ -1,0 +1,20 @@
+import Sequelize from 'sequelize';
+import databaseConfig from '../config/database';
+import models from './models_list'
+
+class Database {
+
+	constructor(){
+		this.init();
+	}
+
+	init(){
+    // Capturando conexão com o banco de dados
+    this.connection = new Sequelize(databaseConfig);
+		// conectando os modelos da aplicação com as tabelas do banco
+		models.map(model => model.init(this.connection));
+	}
+
+}
+
+export default new Database();
