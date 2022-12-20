@@ -8,7 +8,7 @@ class StoreService {
       const user = await User.create({
         name,
         email,
-        password_hash: password
+        password
       });
 
       return {
