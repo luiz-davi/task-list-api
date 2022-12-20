@@ -15,6 +15,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-param-reassing': 'off',
     camelcase: 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'no-param-reassign': 'off'
   },
 };

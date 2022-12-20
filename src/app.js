@@ -17,6 +17,7 @@ routes(){
 }
 
 middlewares(){
+  this.server.use(express.json());
 	this.server.use(routes);
 }
 
