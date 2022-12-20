@@ -20,12 +20,14 @@ class StoreService {
             name: user.name,
             email: user.email
           },
-        }
+        },
+        error: {}
       };
 
     } catch (error) {
       return {
         success: false,
+        result: {},
         error: error.errors
       };
     }
