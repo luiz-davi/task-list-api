@@ -1,4 +1,5 @@
-import StoreService from "../services/users/store";
+import StoreService from '../services/users/store';
+import UpdateService from '../services/users/update';
 
 class UsersController {
 
@@ -13,6 +14,16 @@ class UsersController {
     return res.status(201).json( service.result );
 
 	}
+
+  async update(req, res){
+    const service = await UpdateService.call(req.body, req.user_id);
+
+    if(!service.success){
+      return res.status(service.status).json( service.error );
+    }
+
+    return res.status(service.status).json( service.result );
+  }
 
 }
 
