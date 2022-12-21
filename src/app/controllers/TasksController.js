@@ -6,7 +6,7 @@ import StoreService from '../services/tasks/store';
 class TasksController {
 
   async index(req, res){
-    const service = await IndexService.call(req.body);
+    const service = await IndexService.call(req.user_id);
 
     if(!service.success){
       return res.status(service.status).json( service.error );
