@@ -3,11 +3,9 @@ import User from "../../models/User";
 class UpdateService {
 
   async call(body, user_id){
-    const { name, email, old_password, password } = body;
-
     const user = await User.findByPk(user_id);
 
-    if(! await user.check_autorization(old_password)){
+    if(! await user.check_autorization(body.old_password)){
       return {
         success: false,
         status: 401,
@@ -17,11 +15,7 @@ class UpdateService {
     }
 
     try {
-      const updated_user = await user.update({
-        name,
-        email,
-        password
-      });
+      const updated_user = await user.update(body);
 
       return {
         success: true,
