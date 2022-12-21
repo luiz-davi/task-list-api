@@ -14,7 +14,7 @@ class StoreService {
       success: true,
       status: 201,
       result: {
-        message: "Im here moda foca",
+        message: "Tarefa cadastrada com sucesso!",
         tasks
       },
       error: {}
