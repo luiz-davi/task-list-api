@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import routes from './routes';
 // fazendo projeto enxegar as variáveis de ambiente no .env
 import 'dotenv/config';
@@ -19,6 +20,7 @@ class App {
   }
 
   middlewares(){
+    this.server.use(cors());
     this.server.use(express.json());
   }
 
