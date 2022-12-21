@@ -2,6 +2,7 @@
 import * as Yup from 'yup';
 import IndexService from '../services/tasks/index';
 import StoreService from '../services/tasks/store';
+import UpdateService from '../services/tasks/update';
 
 class TasksController {
 
@@ -44,7 +45,14 @@ class TasksController {
 	}
 
   async update(req, res){
-    return res.json({ ok: true });
+
+    const service = await UpdateService.call(req.params.id, req.user_id);
+
+    if(!service.success){
+      return res.status(service.status).json( service.error );
+    }
+
+    return res.status(service.status).json( service.result );
   }
 
 }

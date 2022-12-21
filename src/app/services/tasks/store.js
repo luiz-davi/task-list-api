@@ -12,7 +12,7 @@ class StoreService {
 
     return {
       success: true,
-      status: 200,
+      status: 201,
       result: {
         message: "Im here moda foca",
         tasks

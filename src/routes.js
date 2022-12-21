@@ -12,7 +12,8 @@ routes.post('/usuarios/auth', AutenticacaoController.auth);
 
 routes.use(authMiddleware); // Todas as rotas a baixo dessa rota passarão pela validação do middleware
 routes.put('/usuarios', UsersController.update);
-routes.get('/tarefas', TasksController.index)
-routes.post('/tarefas', TasksController.store)
+routes.get('/tarefas', TasksController.index);
+routes.post('/tarefas', TasksController.store);
+routes.put('/tarefas/:id', TasksController.update);
 
 export default routes;
